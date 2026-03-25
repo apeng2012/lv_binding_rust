@@ -7,10 +7,12 @@
 
 mod arc;
 mod bar;
+#[cfg(feature = "drivers")]
 mod keyboard;
 mod label;
 mod meter;
 mod slider;
+#[cfg(feature = "drivers")]
 mod table;
 
 include!(concat!(env!("OUT_DIR"), "/generated.rs"));
@@ -18,8 +20,10 @@ include!(concat!(env!("OUT_DIR"), "/generated.rs"));
 use crate::NativeObject;
 pub use arc::*;
 pub use bar::*;
+#[cfg(feature = "drivers")]
 pub use keyboard::*;
 pub use label::*;
 pub use meter::*;
 pub use slider::*;
+#[cfg(feature = "drivers")]
 pub use table::*;
